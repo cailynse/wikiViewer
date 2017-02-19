@@ -81,33 +81,33 @@ li {
 }
 
 a.red {
-	background-color: #ff0000;
+	background-color: #fe0006;
 	color: #000000;
-	border-color: #660000;
+	border-color: #B30005;
 }
 
 a.red:hover {
-	color: #ff0000;
+	color: #ff1f25;
 }
 
 a.blue {
-	background-color: #0000ff;
+	background-color: #114CBF;
 	color: #000000;
-	border-color: #000066;
+	border-color: #072B73;
 }
 
 a.blue:hover {
-	color: #0000ff;
+	color: #3464C3;
 }
 
 a.yellow {
-	background-color: #ffff00;
+	background-color: #fffD00;
 	color: #000000;
-	border-color: #ffff7f;
+	border-color: #D8D700;
 }
 
 a.yellow:hover {
-	color: #cccc00;
+	color: #FFFE54;
 }
 
 .round span.round {
@@ -117,31 +117,55 @@ a.yellow:hover {
 	font-size: 1px;
 	border: none;
 	padding: 40% 20% 0 20%;
-	color: #fff;
 }
+
 
 .round span:hover {
 	opacity: .85;
-	font-size: 16px;
-	text-shadow: 0 1px 1px rgba(0,0,0,.5);	
+	font-size: 16px;	
 }
 
 .blue span {
-	background: #0000ff;		
+	background: #114CBF;
+	color: #fff;
+	text-shadow: 0 .5px .5px #000;
 }
 
 .red span {
-	background: #ff0000;		
+	background: #fe0006;
+	color: #fff;
+	text-shadow: 0 .5px .5px #fff;
 }
 
 .yellow span {
-	background: #cccc00;	
+	background: #fffD00;
+	color: #000;
+	text-shadow: 0 .5px .5px #fff;
 }
 
 .resultTitle {
-	padding: 2%;
 	margin-left: 20%;
 	margin-right: 20%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	color: lavender;
+	font-size: 20px;
+}
+
+.resultSnip {
+	margin-left: 20%;
+	margin-right: 20%;
+	color: lavender;
+	font-size: 15px;
+}
+
+.goToWiki {
+	font-size: 15px;
+	font-family: "Della Respira";
+	text-align: center;
+	margin-left: 20%;
+	margin-right: 20%;
+	color: lavender;
 }
 
 footer{

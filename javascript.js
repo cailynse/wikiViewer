@@ -5,7 +5,31 @@ var wikipediaViewer = (function () {
 	'use strict';
 
 	function buildResultButton(resultObj) {
-		var well = document.createElement(DIV);
+		var newButton = document.createElement("a"),
+			resultClick = document.createTextNode("click");
+		
+		var newDivTitle = document.createElement("h2"),
+			resultTitle = document.createTextNode(resultObj.title);
+		newDivTitle.appendChild(resultTitle);
+		
+		var newDivSnip = document.createElement("p"),
+			resultSnip = document.createTextNode(resultObj.snip);
+		newDivSnip.appendChild(resultSnip);
+		
+		var newButton = document.createElement("a"),
+			resultClick = document.createTextNode("click");
+		
+		var placeMarker = document.getElementById("pageEnd");
+		document.body.insertBefore(newDivTitle, placeMarker);
+		document.body.insertBefore(newDivSnip, placeMarker);
+		document.body.insertBefore(newButton, placeMarker);
+		newDivTitle.classList.add("resultTitle");
+		newDivSnip.classList.add("resultSnip");
+		newButton.setAttribute("href", resultObj.URL);
+		newButton.innerHTML = "Go To Page";
+		newButton.classList.add("goToWiki");
+
+		return;
 	}
 
 	function displaySearchResults(resultArray) {
@@ -14,9 +38,8 @@ var wikipediaViewer = (function () {
 			URL = '',
 			j = 0;
 		for (j = 0; j < resultArray.length; j = j + 1) {
-			var Titletxt = document.createTextNode(resultArray[j].title);
-			btn.appendChild(Titletxt);
-			document.body.appendChild(btn);
+			console.log(resultArray[j]);
+			buildResultButton(resultArray[j]);
 		}
 	}
 
@@ -31,7 +54,6 @@ var wikipediaViewer = (function () {
 			wikiPage.URL = data[3][i];
 			allWikiResults.push(wikiPage);
 		}
-		console.log(allWikiResults);
 		displaySearchResults(allWikiResults);
 	}
 	var handleData = function (data, textStatus, jqXHR) {
