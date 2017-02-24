@@ -4,30 +4,42 @@
 var wikipediaViewer = (function () {
 	'use strict';
 
+	function clearResults() {
+		$("#resultSpot").html("");
+	}
+
+	function clearSearchBar() {
+		$('input').val(null);
+	}
+
 	function buildResultButton(resultObj) {
-		var newButton = document.createElement("a"),
-			resultClick = document.createTextNode("click");
-		
+
+		var resultWell = document.createElement("div");
+		resultWell.classList.add("well");
+		resultWell.classList.add("resultWell");
+
 		var newDivTitle = document.createElement("h2"),
 			resultTitle = document.createTextNode(resultObj.title);
 		newDivTitle.appendChild(resultTitle);
-		
+
 		var newDivSnip = document.createElement("p"),
 			resultSnip = document.createTextNode(resultObj.snip);
 		newDivSnip.appendChild(resultSnip);
-		
+
 		var newButton = document.createElement("a"),
 			resultClick = document.createTextNode("click");
-		
-		var placeMarker = document.getElementById("pageEnd");
-		document.body.insertBefore(newDivTitle, placeMarker);
-		document.body.insertBefore(newDivSnip, placeMarker);
-		document.body.insertBefore(newButton, placeMarker);
+		newButton.appendChild(resultClick);
+
 		newDivTitle.classList.add("resultTitle");
 		newDivSnip.classList.add("resultSnip");
 		newButton.setAttribute("href", resultObj.URL);
 		newButton.innerHTML = "Go To Page";
 		newButton.classList.add("goToWiki");
+
+		resultWell.appendChild(newDivTitle);
+		resultWell.appendChild(newDivSnip);
+		resultWell.appendChild(newButton);
+		document.getElementById("resultSpot").appendChild(resultWell);
 
 		return;
 	}
@@ -44,6 +56,7 @@ var wikipediaViewer = (function () {
 	}
 
 	function arrayOfPages(data) {
+		console.log(data);
 		var numberOfPages = data[1].length,
 			allWikiResults = [],
 			i = 0;
@@ -57,6 +70,7 @@ var wikipediaViewer = (function () {
 		displaySearchResults(allWikiResults);
 	}
 	var handleData = function (data, textStatus, jqXHR) {
+		console.log(data);
 		arrayOfPages(data);
 
 	};
@@ -81,6 +95,9 @@ var wikipediaViewer = (function () {
 			reallyCleanSearchTerm = cleanSearchTerm.join('_');
 		console.log(reallyCleanSearchTerm);
 		searchWikipedia(reallyCleanSearchTerm);
+		clearSearchBar();
+		clearResults();
+
 	}
 
 	$(function () {
@@ -91,13 +108,6 @@ var wikipediaViewer = (function () {
 			}
 		});
 	});
-
-	function displaySnips(wikiSnips) {
-		$('#snips').text(wikiSnips.articleSnip);
-	}
-
-
-
 
 
 }());

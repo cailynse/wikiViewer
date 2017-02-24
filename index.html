@@ -6,25 +6,33 @@
 <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Della+Respira" rel="stylesheet">
 
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Wikipedia Viewer</title>
-	</head>
-	<body id="mainPage">
+</head>
+
+<body id="mainPage">
 	<div class="container-fluid">
 		<h1 id="title">Wikipedia Viewer</h1>
-		</div>
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Special:Random" class="round blue"><i class="fa fa-random"></i><span class="round">See a Random Wikipedia Page</span></a></li>
-	
-  <li><a href="#" class="round red"><i class="fa fa-search"></i><span class="round"><form onsubmit="getSearchTerm()"><input id="wikiSearch" type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1"></form><i type='button' id='searchButton' class="fa fa-search"/></i></span></a></li>
-	
-	<li><a href="https://donate.wikimedia.org/w/index.php?title=Special:FundraiserLandingPage&country=CA&uselang=en&utm_medium=sidebar&utm_source=donate&utm_campaign=C13_meta.wikimedia.org" class="round yellow"><i class="fa fa-usd"></i><span class="round">Donate to Wikipedia</span></a></li>
-</ul> 
-<div id="pageEnd"></div>
-	</body>
-	
-	<footer class="text-center"><p id="footerText" class="text-cenr"> <i class="fa fa-star"></i> Coded By: Cailyn Edwards 2017 <i class="fa fa-star"></i></p></footer>	
+	</div>
+	<ul>
+		<li><a href="https://en.wikipedia.org/wiki/Special:Random" class="round blue"><i class="fa fa-random"></i><span class="round">See a Random Wikipedia Page</span></a></li>
+
+		<li><a href="#" class="round red"><i class="fa fa-search"></i><span class="round">
+			
+			<form id="wikiSearchForm"><input name="search" id="wikiSearchInput" type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon1" required><i type='button' id='searchButton' value="Search" class="fa fa-search"/></i></form>
+			
+			</span></a></li>
+
+		<li><a href="https://donate.wikimedia.org/w/index.php?title=Special:FundraiserLandingPage&country=CA&uselang=en&utm_medium=sidebar&utm_source=donate&utm_campaign=C13_meta.wikimedia.org" class="round yellow"><i class="fa fa-usd"></i><span class="round">Donate to Wikipedia</span></a></li>
+	</ul>
+	<div id="resultSpot"></div>
+</body>
+
+<footer class="text-center">
+	<p id="footerText" class="text-cenr"> <i class="fa fa-star"></i> Coded By: Cailyn Edwards 2017 <i class="fa fa-star"></i></p>
+</footer>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -34,5 +42,5 @@
 <!-- Latest compiled JavaScript -->
 <script src="javascript.js"></script>
 
-		
+
 </html>

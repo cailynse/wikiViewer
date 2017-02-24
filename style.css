@@ -6,7 +6,6 @@
 	text-align: center;
 	color: lavender;
 }
-
 #mainPage {
 	width: 100%;
 	height: 100%;
@@ -14,24 +13,19 @@
 	font-size: 13px;
 	background-color: #262626;
 }
-
 body {
 	height: 100%;
-	margin-bottom: -142px; 
-	
+	margin-bottom: -142px;
 }
-
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	}
-
+}
 ul {
 	margin: 30px auto;
 	text-align: center;
 }
-
 li {
 	list-style: none;
 	position: relative;
@@ -40,12 +34,14 @@ li {
 	width: 100px;
 	height: 100px;
 }
-
 @keyframes rotate {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(-360deg);}
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
 }
-
 .round {
 	display: block;
 	position: absolute;
@@ -53,21 +49,20 @@ li {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	padding: 30px;	
-	text-decoration: none;		
+	padding: 30px;
+	text-decoration: none;
 	text-align: center;
-	font-size: 25px;		
-	text-shadow: 0 1px 0 rgba(255,255,255,.7);
+	font-size: 25px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
 	letter-spacing: -.065em;
-	font-family: "Della Respira";		
+	font-family: "Della Respira";
 	transition: all .25s ease-in-out;
-	box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, .2);
 	border-radius: 300px;
 	z-index: 1;
 	border-width: 4px;
 	border-style: solid;
 }
-
 .round:hover {
 	width: 130%;
 	height: 130%;
@@ -79,37 +74,30 @@ li {
 	z-index: 2;
 	transform: rotate(-360deg);
 }
-
 a.red {
 	background-color: #fe0006;
 	color: #000000;
 	border-color: #B30005;
 }
-
 a.red:hover {
 	color: #ff1f25;
 }
-
 a.blue {
 	background-color: #114CBF;
 	color: #000000;
 	border-color: #072B73;
 }
-
 a.blue:hover {
 	color: #3464C3;
 }
-
 a.yellow {
 	background-color: #fffD00;
 	color: #000000;
 	border-color: #D8D700;
 }
-
 a.yellow:hover {
 	color: #FFFE54;
 }
-
 .round span.round {
 	display: block;
 	opacity: 0;
@@ -118,62 +106,49 @@ a.yellow:hover {
 	border: none;
 	padding: 40% 20% 0 20%;
 }
-
-
 .round span:hover {
 	opacity: .85;
-	font-size: 16px;	
+	font-size: 16px;
 }
-
 .blue span {
 	background: #114CBF;
 	color: #fff;
 	text-shadow: 0 .5px .5px #000;
 }
-
 .red span {
 	background: #fe0006;
 	color: #fff;
 	text-shadow: 0 .5px .5px #fff;
 }
-
 .yellow span {
 	background: #fffD00;
 	color: #000;
 	text-shadow: 0 .5px .5px #fff;
 }
-
 .resultTitle {
-	margin-left: 20%;
-	margin-right: 20%;
 	margin-bottom: 0;
 	padding-bottom: 0;
-	color: lavender;
+	color: #262626;
 	font-size: 20px;
 }
-
 .resultSnip {
-	margin-left: 20%;
-	margin-right: 20%;
-	color: lavender;
+	color: #262626;
 	font-size: 15px;
 }
-
 .goToWiki {
 	font-size: 15px;
 	font-family: "Della Respira";
-	text-align: center;
-	margin-left: 20%;
-	margin-right: 20%;
-	color: lavender;
+	color: #262626;
 }
-
-footer{
+.resultWell {
+	padding: 2%;
+	margin: 2% 20%;
+}
+footer {
 	height: 142px;
 	bottom: 0;
 }
-
-#footerText{
+#footerText {
 	font-family: "Caveat Brush";
 	font-size: 20px;
 	color: lavender;
