@@ -97,9 +97,15 @@ var wikipediaViewer = (function () {
 	}
 
 
-	$('#wikiSearchForm').on('submit', function () {
+	$('#wikiSearchForm').on('submit', function (event) {
+		event.preventDefault();
 		var searchVal = $('#wikiSearchInput').val();
-		console.log(searchVal);
+		getSearchTerm(searchVal);
+	});
+
+	$(".wikiSearchBtn").click(function (event) {
+		event.preventDefault();
+		var searchVal = $("#wikiSearchInput").val();
 		getSearchTerm(searchVal);
 	});
 
