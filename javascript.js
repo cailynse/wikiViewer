@@ -4,6 +4,8 @@
 var wikipediaViewer = (function () {
 	'use strict';
 
+	document.getElementById("wikiSearchInput").focus();
+
 	function clearResults() {
 		$("#resultSpot").html("");
 	}
@@ -50,13 +52,11 @@ var wikipediaViewer = (function () {
 			URL = '',
 			j = 0;
 		for (j = 0; j < resultArray.length; j = j + 1) {
-			console.log(resultArray[j]);
 			buildResultButton(resultArray[j]);
 		}
 	}
 
 	function arrayOfPages(data) {
-		console.log(data);
 		var numberOfPages = data[1].length,
 			allWikiResults = [],
 			i = 0;
@@ -70,7 +70,6 @@ var wikipediaViewer = (function () {
 		displaySearchResults(allWikiResults);
 	}
 	var handleData = function (data, textStatus, jqXHR) {
-		console.log(data);
 		arrayOfPages(data);
 
 	};
@@ -89,24 +88,19 @@ var wikipediaViewer = (function () {
 
 	}
 
-	function getSearchTerm() {
-		var searchTerm = $('input').val(),
-			cleanSearchTerm = searchTerm.split(' '),
+	function getSearchTerm(searchTerm) {
+		var cleanSearchTerm = searchTerm.split(' '),
 			reallyCleanSearchTerm = cleanSearchTerm.join('_');
-		console.log(reallyCleanSearchTerm);
 		searchWikipedia(reallyCleanSearchTerm);
 		clearSearchBar();
 		clearResults();
-
 	}
 
-	$(function () {
-		$('#searchButton').on('keypress click', function (e) {
-			var search = $('#usersSearch').val();
-			if (e.which === 13 || e.type === 'click') {
-				getSearchTerm();
-			}
-		});
+
+	$('#wikiSearchForm').on('submit', function () {
+		var searchVal = $('#wikiSearchInput').val();
+		console.log(searchVal);
+		getSearchTerm(searchVal);
 	});
 
 
