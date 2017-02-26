@@ -125,6 +125,11 @@ a.yellow:hover {
 	color: #000;
 	text-shadow: 0 .5px .5px #fff;
 }
+#resultSpot {
+	color: #fff;
+	padding: 2%;
+	text-align: center;
+}
 .resultTitle {
 	margin-bottom: 0;
 	padding-bottom: 0;
@@ -143,10 +148,6 @@ a.yellow:hover {
 .resultWell {
 	padding: 2%;
 	margin: 2% 20%;
-}
-footer {
-	height: 142px;
-	bottom: 0;
 }
 #footerText {
 	font-family: "Caveat Brush";

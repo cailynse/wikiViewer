@@ -34,6 +34,7 @@ var wikipediaViewer = (function () {
 
 		newDivTitle.classList.add("resultTitle");
 		newDivSnip.classList.add("resultSnip");
+		newButton.setAttribute("target", "_blank");
 		newButton.setAttribute("href", resultObj.URL);
 		newButton.innerHTML = "Go To Page";
 		newButton.classList.add("goToWiki");
@@ -58,18 +59,29 @@ var wikipediaViewer = (function () {
 
 	function arrayOfPages(data) {
 		var numberOfPages = data[1].length,
+			searchTerm = data[0],
 			allWikiResults = [],
 			i = 0;
-		for (i = 0; i < numberOfPages; i = i + 1) {
-			var wikiPage = {};
-			wikiPage.title = data[1][i];
-			wikiPage.snip = data[2][i];
-			wikiPage.URL = data[3][i];
-			allWikiResults.push(wikiPage);
+
+		if (numberOfPages === 0) {
+			var noResults = document.createTextNode("Sorry, your search for '" + searchTerm + "' returned no results. Ensure that it is spelled correctly or try using more general keywords.");
+			document.getElementById("resultSpot").appendChild(noResults);
+
+		} else {
+			for (i = 0; i < numberOfPages; i = i + 1) {
+				var wikiPage = {};
+				wikiPage.title = data[1][i];
+				wikiPage.snip = data[2][i];
+				wikiPage.URL = data[3][i];
+				allWikiResults.push(wikiPage);
+			}
 		}
 		displaySearchResults(allWikiResults);
 	}
 	var handleData = function (data, textStatus, jqXHR) {
+		console.log("I made it here");
+		console.log(data[0], data[1].length);
+		console.log(data);
 		arrayOfPages(data);
 
 	};
@@ -83,7 +95,9 @@ var wikipediaViewer = (function () {
 			type: "GET",
 			async: "false",
 			success: handleData,
-			error: function (errorMessage) {}
+			error: function (errorMessage) {
+				alert("Unable to retrieve results. Please refresh page.");
+			}
 		});
 
 	}
